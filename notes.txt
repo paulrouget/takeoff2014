@@ -1,0 +1,14 @@
+#html5, optimizer, intel
+more things on smaller things (60fps on mobile)
+stop guessing, it's not magic
+
+how to learn?
+read mailing list
+discuss with browser makers
+get your code reviewed by better engineer
+get involved in a low level project
+
+I think in slow motion
+I think hardware
+no work around
+bug? file a bug, fix the browser, fix the spec
