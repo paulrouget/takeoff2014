@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>takeoff 2014</title>
 
 <!-- Your Slides -->
@@ -17,6 +19,9 @@
 <section><figure><img src="03.svg"></figure></section>
 <section><figure><img src="07.svg"></figure></section>
 <section><figure><img src="08.svg"></figure></section>
+<section><figure><img src="13.svg"></figure></section>
+<section><figure><img src="14.svg"></figure></section>
+<section><figure><img src="08.svg"></figure></section>
 <section><figure><img src="09.svg"></figure></section>
 <section><figure><img src="10.svg"></figure></section>
 <section><figure><img src="11.svg"></figure></section>
@@ -25,8 +30,6 @@
 <section><figure><img src="04.svg"></figure></section>
 <section><figure><img src="05.svg"></figure></section>
 <section><figure><img src="06.svg"></figure></section>
-<section><figure><img src="13.svg"></figure></section>
-<section><figure><img src="14.svg"></figure></section>
 <section><figure><img src="15.svg"></figure></section>
 <section><figure><img src="16.svg"></figure></section>
 <section><figure><img src="17.svg"></figure></section>
@@ -45,6 +48,16 @@
 <section><figure><img src="29.svg"></figure></section>
 <section><figure><img src="30.svg"></figure></section>
 <section><figure><img src="31.svg"></figure></section>
+<section><figure><img src="32.svg"></figure></section>
+<section><pre style="font-size: 50px;">
+
+
+
+console.log(1);
+setTimeout(function(){console.log(2)},0);
+// something that takes 10 seconds
+console.log(2):
+</pre></section>
 <section><figure><img src="32.svg"></figure></section>
 <section><figure><img src="33.svg"></figure></section>
 <section><figure><img src="34.svg"></figure></section>
@@ -74,8 +87,8 @@
 
 <script>
   var w = window.open("notes.html","notes",'height=200,width=200');
-  function showNotes(data) {
-    if (w) w.postMessage(data, "*");
+  function showNext(url) {
+    if (w) w.postMessage(url, "*");
   }
 </script>
 
@@ -452,11 +465,15 @@
       if (video && !!+this.params.autoplay) {
         video.play();
       }
-      var notes = next.querySelector("notes");
-      if (notes)
-        showNotes(notes.textContent);
-      else
-        showNotes("");
+
+      var nextnext = $("section:nth-of-type("+ (this.idx + 1) +")");
+      nextnext = nextnext.querySelector("img");
+      console.log(nextnext);
+      if (nextnext) {
+        showNext(nextnext.src);
+      } else {
+        showNext("");
+      }
     } else {
       // That should not happen
       this.idx = -1;

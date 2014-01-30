@@ -5,10 +5,15 @@
 
 <script>
   window.onmessage = function(event) {
-    document.querySelector("pre").textContent = event.data;
+    document.querySelector("img").src = event.data;
   }
 </script>
-<style></style>
 
-<pre>
-</pre>
+<style>
+  img {
+    width: 130%;
+    height: 100%;
+  }
+</style>
+
+<img>
